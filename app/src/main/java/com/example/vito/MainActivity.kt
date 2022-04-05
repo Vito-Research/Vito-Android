@@ -71,7 +71,6 @@ class MainActivity : ComponentActivity() {
                         alert.resetAlert()
 
                         Log.i("", file.toString())
-                        //  if (!listAssetFiles("$path/$file")) return false else {
                         val inputString =
                             application.assets.open(file).bufferedReader()
                                 .use { it.readText() }
@@ -80,7 +79,6 @@ class MainActivity : ComponentActivity() {
                             // Log.i("", item.toString())
                             val row: List<String> = item.split(",")
                              Log.i("ROW", row.toString())
-                            //if  (row[(2)] != "Heartrate") {
                             if (!row.contains("Heartrate") && row.indices.contains(2) && row[(2)].trim().toIntOrNull() != null) {
 
 
@@ -96,8 +94,6 @@ class MainActivity : ComponentActivity() {
                                         } else {
                                             Log.i("YIKES", alert.returnAlert().toString())
 
-//                                            Log.i("", alert.returnAlert().toString())
-//                                            Log.i("", row.last().toString())
                                             total += 1
                                         }
 
@@ -115,12 +111,9 @@ class MainActivity : ComponentActivity() {
                         }
 
                     }
-
-                  //  alert.resetAlert()
                 }
             }
         Log.i("", ((correct).toDouble() / total.toDouble()).toString())
-                //}
 
 
         return true
@@ -186,12 +179,7 @@ class AlertLv1 {
     }
     fun calculateMedian(hr: Int) {
 
-        //Log.i("", this.state.alert.hr.last().toString())
-        //val median = med(list = state.alert.hr.map{it.toDouble()})
-//        if (hr < median + 3) {
-//            this.state = Level.Zero
-//           return
-//        } else {
+
         this.state.alert.hr += hr
         val frozenState =  state
         Log.i("HR= ",hr.toString())
@@ -206,13 +194,11 @@ class AlertLv1 {
                         (hr == (median + 3)) -> this.state = Level.Three
                         else -> this.state = Level.Zero
                     }
-                   // this.state.alert.hr = frozenState.alert.hr
                     return
                 }
 
 
                 Level.Four -> {
-                    // state.alert.hr += hr
 
                     val median = med(list = state.alert.hr.map { it.toDouble() }).toInt()
                     when {
@@ -220,21 +206,15 @@ class AlertLv1 {
                            (hr.toInt() == (median + 3)) -> this.state = Level.Three
                            else -> this.state = Level.Zero
                     }
-
-                    //this.state.alert.hr = frozenState.alert.hr
                     return
                 }
                 Level.Three -> {
-                    // state.alert.hr += hr
-
                     val median = med(list = state.alert.hr.map { it.toDouble() }).toInt()
                     when {
                         hr >= (median + 4) -> this.state = Level.Four
                         (hr.toInt() == (median + 3).toInt()) -> this.state = Level.Three
                         else -> this.state = Level.Zero
                     }
-
-                    //this.state.alert.hr = frozenState.alert.hr
                     return
                 }
                 Level.Two -> {
@@ -246,27 +226,19 @@ class AlertLv1 {
                         (hr.toInt() == (median + 3).toInt()) -> this.state = Level.Three
                         else -> this.state = Level.Zero
                     }
-
-                   // this.state.alert.hr = frozenState.alert.hr
                     return
                 }
                 Level.One -> {
-                    //state.alert.hr += hr
-
                     val median = med(list = state.alert.hr.map { it.toDouble() }).toInt()
                     when {
                         hr >= (median + 4) -> this.state = Level.Four
                         (hr.toInt() == (median + 3).toInt()) -> this.state = Level.Three
                         else -> this.state = Level.Zero
                     }
-
-                   // this.state.alert.hr = frozenState.alert.hr
                     return
                 }
 
                 Level.Zero -> {
-//                state.alert.hr += hr
-
                     val median = med(list = state.alert.hr.map { it.toDouble() }).toInt()
 
 
@@ -275,13 +247,9 @@ class AlertLv1 {
                         (hr == (median + 3)) -> this.state = Level.One
                         else -> this.state = Level.Zero
                     }
-
-                   // this.state.alert.hr = frozenState.alert.hr
                     return
                 }
             }
-        //}
-       // resetAlert()
     }
     public data class HeathData(val Start_Date: Date, var Start_Time:String, var hr: Double, var risk: Int) {
 
