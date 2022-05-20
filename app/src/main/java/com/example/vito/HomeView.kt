@@ -1,6 +1,6 @@
 package com.example.vito
 
-
+import androidx.compose.ui.text.font.FontWeight
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
@@ -23,6 +23,7 @@ import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.semantics.Role.Companion.Image
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.vito.ui.theme.VitoTheme
@@ -91,6 +92,7 @@ fun AlertCard(alertTitle: String) {
                 text = alertTitle,
                 color = Color.White,
                 fontSize = 30.sp,
+                fontWeight = FontWeight.Bold,
                 modifier = Modifier
 
                     .padding(10.dp)
@@ -108,7 +110,7 @@ fun LearnMore(title: String, text: String) {
         shape = RoundedCornerShape(15),
         modifier = Modifier
 
-            .padding(30.dp)
+            .padding(10.dp)
 
             .fillMaxWidth()
             .alpha(.8F)
@@ -133,9 +135,11 @@ fun LearnMore(title: String, text: String) {
                     Spacer(modifier = Modifier.padding()
                        )
                     Text(
+
                         text = title,
                         color = Color.Black,
                         fontSize = 20.sp,
+                        textAlign = TextAlign.Right,
                         modifier = Modifier
 
                             .padding(10.dp)
@@ -144,17 +148,19 @@ fun LearnMore(title: String, text: String) {
                     )
                 }
                 Row {
+                    Spacer(modifier = Modifier.padding())
                     Text(
                         text = text,
                         color = Color.Gray,
                         fontSize = 10.sp,
+                        textAlign = TextAlign.Right,
                         modifier = Modifier
 
                             .padding(10.dp)
 
 
                     )
-                    Spacer(modifier = Modifier.padding())
+
                 }
             }
         }
