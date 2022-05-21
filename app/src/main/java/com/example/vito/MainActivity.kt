@@ -21,6 +21,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.vito.ui.theme.VitoTheme
+import io.github.boguszpawlowski.composecalendar.SelectableCalendar
 import io.github.boguszpawlowski.composecalendar.StaticCalendar
 import java.io.File
 import java.util.*
@@ -51,7 +52,10 @@ class MainActivity : ComponentActivity() {
 
         NavHost(navController = navController, startDestination = "Home") {
             composable("Home") {  HomeView(navController= navController) }
-            composable("Data") { Text("Hi") }
+            composable("Data") {
+
+                SelectableCalendar()
+            }
             /*...*/
         }
     }

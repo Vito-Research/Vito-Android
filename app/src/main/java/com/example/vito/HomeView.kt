@@ -48,7 +48,7 @@ fun HomeView(navController: NavController) {
                 .height(40.dp)
                 .fillMaxWidth()
         )
-        LearnMore("Learn More", "Learn more about our values and how the algorithm works")
+        LearnMore("Learn More?", "Learn more about our values and how the algorithm works")
 
 
 
@@ -63,7 +63,10 @@ fun AlertDetails(alertTitle: String, icon: ImageVector = Icons.Rounded.Build) {
         .padding(10.dp)
        ) {
         Icon(icon, alertTitle)
-        Text(text = alertTitle)
+        Text(text = alertTitle,
+            fontSize = 15.sp,
+            fontWeight = FontWeight.Bold,
+        )
     }
 }
 
@@ -77,7 +80,7 @@ fun AlertCard(alertTitle: String) {
 
                 .padding(10.dp)
                 .padding(vertical = 10.dp)
-                .height(100.dp)
+                .height(130.dp)
                 .fillMaxWidth()
                 .alpha(.8F)
 
@@ -106,14 +109,15 @@ fun AlertCard(alertTitle: String) {
 fun LearnMore(title: String, text: String) {
 
     Card(
-        backgroundColor = Color.LightGray,
-        shape = RoundedCornerShape(15),
+        elevation = 10.dp,
+        backgroundColor = Color.White,
+        shape = RoundedCornerShape(10),
         modifier = Modifier
 
             .padding(10.dp)
 
             .fillMaxWidth()
-            .alpha(.8F)
+
 
 
     ) {
@@ -122,7 +126,9 @@ fun LearnMore(title: String, text: String) {
             Image(painter = image,contentDescription = "", modifier = Modifier
 
                 .padding(30.dp)
-                .width(100.dp))
+                .padding(top= 40.dp)
+                .width(100.dp)
+            )
 
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,
@@ -137,8 +143,9 @@ fun LearnMore(title: String, text: String) {
                     Text(
 
                         text = title,
+                        fontWeight = FontWeight.Bold,
                         color = Color.Black,
-                        fontSize = 20.sp,
+                        fontSize = 30.sp,
                         textAlign = TextAlign.Right,
                         modifier = Modifier
 
@@ -151,8 +158,8 @@ fun LearnMore(title: String, text: String) {
                     Spacer(modifier = Modifier.padding())
                     Text(
                         text = text,
-                        color = Color.Gray,
-                        fontSize = 10.sp,
+                        color = Color.Black,
+                        fontSize = 20.sp,
                         textAlign = TextAlign.Right,
                         modifier = Modifier
 
