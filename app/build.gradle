@@ -48,7 +48,7 @@ android {
 dependencies {
     def nav_version = "2.4.1"
     implementation "io.github.boguszpawlowski.composecalendar:composecalendar"
-
+    implementation 'com.squareup.okhttp3:okhttp:3.8.1'
     // separate artifact with utilities for working with kotlinx-datetime
     implementation "androidx.navigation:navigation-compose:$nav_version"
     implementation 'io.github.boguszpawlowski.composecalendar:composecalendar:0.3.0'

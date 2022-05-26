@@ -2,17 +2,17 @@ package com.example.vito
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
+import androidx.compose.material.Icon
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.rounded.Favorite
-import androidx.compose.material.icons.rounded.List
-import androidx.compose.material.icons.rounded.Notifications
+import androidx.compose.material.icons.rounded.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -25,36 +25,71 @@ fun PrivacyView(navController: NavController) {
     Column(
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,
+        modifier = Modifier.padding()
     ) {
 
-        val image: Painter = painterResource(id = R.drawable.info)
+        val image: Painter = painterResource(id = R.drawable.privacy)
         Image(painter = image,contentDescription = "", modifier = Modifier
 
             .padding(30.dp)
-            .padding(top= 40.dp)
-            .width(100.dp)
+            .padding(top = 40.dp)
+            .width(300.dp)
         )
         Text(text = "Privacy is Vital",
-            fontSize = 18.sp,
+            fontSize = 38.sp,
             color = Color.Blue,
             fontWeight = FontWeight.Bold,
             textAlign = TextAlign.Left,
             modifier = Modifier
-                .fillMaxWidth()
+                .width(300.dp)
+                .padding()
         )
         Text(text = "Here's how we protect your privacy...",
-            fontSize = 18.sp,
+            fontSize = 22.sp,
             color = Color.Blue,
             fontWeight = FontWeight.Bold,
             textAlign = TextAlign.Left,
             modifier = Modifier
                 .alpha(.4F)
-                .fillMaxWidth()
+                .width(300.dp)
+                .padding()
         )
-
-
+        Spacer(modifier = Modifier.height(50.dp))
+        TLDRView(icon = Icons.Rounded.Lock,"Vito Processes On-Device", "Vito never exports health data off device")
+        Spacer(modifier = Modifier.height(10.dp))
+        TLDRView(icon = Icons.Rounded.KeyboardArrowDown, "Fitbit API", "Used to authenticate, request, and get data from your Fitbit")
 
 
     }
 
+}
+@Composable
+fun TLDRView(icon: ImageVector, title: String, text: String) {
+    Row(modifier = Modifier.padding()) {
+        Icon(icon, title, modifier = Modifier
+            .alpha(0.8F)
+            .width(50.dp))
+        Column {
+            Text(text = title,
+                fontSize = 18.sp,
+                color = Color.Black,
+                fontWeight = FontWeight.Bold,
+                textAlign = TextAlign.Left,
+                modifier = Modifier
+                    .alpha(.9F)
+                    .width(300.dp)
+                    .padding()
+            )
+            Text(text = text,
+                fontSize = 18.sp,
+                color = Color.Black,
+                fontWeight = FontWeight.Bold,
+                textAlign = TextAlign.Left,
+                modifier = Modifier
+                    .alpha(.6F)
+                    .width(300.dp)
+                    .padding()
+            )
+        }
+    }
 }
