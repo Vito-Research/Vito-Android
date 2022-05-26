@@ -9,7 +9,10 @@ import androidx.activity.compose.setContent
 import androidx.annotation.RequiresApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.gestures.Orientation
+import androidx.compose.foundation.gestures.scrollable
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
@@ -34,20 +37,23 @@ import androidx.navigation.compose.rememberNavController
 import java.util.*
 @Composable
 fun HomeView(navController: NavController) {
+    val scrollState = rememberScrollState()
     Column(
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,
+        modifier = Modifier
+          //  .scrollable(state = scrollState, orientation = Orientation.Vertical)
     ) {
         Header(navController= navController)
         AlertCard("ALERT")
         AlertDetails("Your heart rate while asleep is abnormally high compared to your previous data", icon= Icons.Rounded.Favorite)
         AlertDetails("This can be a sign of disease, intoxication, lack of sleep, or other factors", icon= Icons.Rounded.List)
         AlertDetails("This is not medical advice or a diagnosis, it's simply a datapoint to bring up to your doctor", icon= Icons.Rounded.Notifications)
-        Spacer(
-            modifier = Modifier
-                .height(40.dp)
-                .fillMaxWidth()
-        )
+//        Spacer(
+//            modifier = Modifier
+//                .height(40.dp)
+//                .fillMaxWidth()
+//        )
         LearnMore("Learn More?", "Learn more about our values and how the algorithm works")
 
 
@@ -62,17 +68,30 @@ fun AlertDetails(alertTitle: String, icon: ImageVector = Icons.Rounded.Build) {
     Column( modifier = Modifier
         .padding(10.dp)
        ) {
-        Icon(icon, alertTitle)
+        Icon(icon, alertTitle, modifier = Modifier.alpha(0.8F))
         Text(text = alertTitle,
-            fontSize = 15.sp,
+            fontSize = 18.sp,
             fontWeight = FontWeight.Bold,
+            modifier = Modifier.alpha(0.7F)
         )
     }
 }
 
 @Composable
 fun AlertCard(alertTitle: String) {
+    Text(
+        text = "Stress Event Level",
+        color = Color.Black,
+        textAlign = TextAlign.Left,
+        fontSize = 25.sp,
+        fontWeight = FontWeight.ExtraBold,
+        modifier = Modifier
 
+            .padding(10.dp)
+            .fillMaxWidth()
+
+
+    )
         Card(
             backgroundColor = Color.Red,
             shape = RoundedCornerShape(15),
@@ -148,7 +167,7 @@ fun LearnMore(title: String, text: String) {
                         fontSize = 30.sp,
                         textAlign = TextAlign.Right,
                         modifier = Modifier
-
+                            .alpha(0.9F)
                             .padding(10.dp)
 
 
@@ -162,7 +181,7 @@ fun LearnMore(title: String, text: String) {
                         fontSize = 20.sp,
                         textAlign = TextAlign.Right,
                         modifier = Modifier
-
+                            .alpha(0.6F)
                             .padding(10.dp)
 
 
@@ -194,7 +213,8 @@ fun Header(navController: NavController) {
             navController.navigate("Data")
 
         }) {
-            Icon(Icons.Rounded.DateRange, "")
+            Icon(Icons.Rounded.DateRange, "", tint=Color.Blue, modifier = Modifier
+                .alpha(0.8F))
         }
 
         Spacer(
@@ -203,13 +223,14 @@ fun Header(navController: NavController) {
                 .fillMaxWidth()
         )
 
-        TextButton( modifier = Modifier,
+        TextButton(modifier = Modifier,
                 onClick = {
-            val alert = AlertLv1()
+                    navController.navigate("Privacy")
 
         }
         ) {
-            Icon(Icons.Rounded.Info, "")
+            Icon(Icons.Rounded.Info, "", tint = Color.Blue,  modifier = Modifier
+                .alpha(0.8F))
 
         }
     }

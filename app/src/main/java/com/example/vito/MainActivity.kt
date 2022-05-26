@@ -7,22 +7,15 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.annotation.RequiresApi
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.rounded.Add
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.alpha
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.vito.ui.theme.VitoTheme
 import io.github.boguszpawlowski.composecalendar.SelectableCalendar
-import io.github.boguszpawlowski.composecalendar.StaticCalendar
 import java.io.File
 import java.util.*
 
@@ -56,9 +49,16 @@ class MainActivity : ComponentActivity() {
 
                 SelectableCalendar()
             }
+            composable("Privacy") {
+
+                PrivacyView(navController)
+            }
             /*...*/
         }
     }
+
+
+
     private fun listAssetFiles(path: String): Boolean {
         val list: Array<String>?
 
