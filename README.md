@@ -1,6 +1,6 @@
 # Vito
 
-![IMG_0474.png](https://res.craft.do/user/full/23a03a79-af5e-1af9-b4ff-27170389b6b1/A189BFA9-3A66-4031-B80A-6FBC1DD871DD_2/pV4Q4IOCOPzY7lhycc8unxymCZ4xX6Nxi2NGPAahnzcz/IMG_0474.png)
+![Galaxy Note 20 Ultra](https://user-images.githubusercontent.com/67549402/170920046-1f07ba6e-3d6e-4eb1-92b9-b39e386cc676.png)
 
 ## Goals
 
