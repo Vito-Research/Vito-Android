@@ -58,7 +58,17 @@ fun PrivacyView(navController: NavController) {
         TLDRView(icon = Icons.Rounded.Lock,"Vito Processes On-Device", "Vito never exports health data off device")
         Spacer(modifier = Modifier.height(10.dp))
         TLDRView(icon = Icons.Rounded.KeyboardArrowDown, "Fitbit API", "Used to authenticate, request, and get data from your Fitbit")
-
+        Spacer(modifier = Modifier.height(10.dp))
+        Text(text = "Vito utilizes an on-device algorithm to build community trust, resulting in increased app usage and a reduction in the spread of infection. As a result, we believe that privacy is vital.",
+            fontSize = 14.sp,
+            color = Color.Black,
+            fontWeight = FontWeight.SemiBold,
+            textAlign = TextAlign.Left,
+            modifier = Modifier
+                .alpha(.6F)
+                .width(250.dp)
+                .padding()
+        )
 
     }
 
