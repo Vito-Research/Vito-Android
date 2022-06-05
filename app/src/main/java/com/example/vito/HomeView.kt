@@ -55,7 +55,7 @@ fun HomeView(navController: NavController) {
 //                .height(40.dp)
 //                .fillMaxWidth()
 //        )
-        LearnMore("Learn More?", "Learn more about our values and how the algorithm works")
+        LearnMore("Learn More?", "Learn more about our values and how the algorithm works", navController)
 
 
 
@@ -126,7 +126,15 @@ fun AlertCard(alertTitle: String) {
     }
 }
 @Composable
-fun LearnMore(title: String, text: String) {
+fun LearnMore(title: String, text: String, navController: NavController) {
+TextButton(modifier =
+    Modifier
+
+    .padding(10.dp)
+
+    .fillMaxWidth(),
+    onClick = { navController.navigate("Onboarding") }) {
+
 
     Card(
         elevation = 10.dp,
@@ -139,33 +147,36 @@ fun LearnMore(title: String, text: String) {
             .fillMaxWidth()
 
 
-
     ) {
+
         Row {
             val image: Painter = painterResource(id = R.drawable.info)
-            Image(painter = image,contentDescription = "", modifier = Modifier
+            Image(
+                painter = image, contentDescription = "", modifier = Modifier
 
-                .padding(30.dp)
-                .padding(top= 40.dp)
-                .width(100.dp)
+                    .padding(30.dp)
+                    .padding(top = 40.dp)
+                    .width(100.dp)
             )
 
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.Center,
-                modifier = Modifier.fillMaxWidth()
-                    .padding(vertical=20.dp)
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(vertical = 20.dp)
 
             ) {
                 Row {
-                    Spacer(modifier = Modifier.padding()
-                       )
+                    Spacer(
+                        modifier = Modifier.padding()
+                    )
                     Text(
 
                         text = title,
                         fontWeight = FontWeight.Bold,
                         color = Color.Black,
-                        fontSize = 30.sp,
+                        fontSize = 24.sp,
                         textAlign = TextAlign.Right,
                         modifier = Modifier
                             .alpha(0.9F)
@@ -179,7 +190,7 @@ fun LearnMore(title: String, text: String) {
                     Text(
                         text = text,
                         color = Color.Black,
-                        fontSize = 20.sp,
+                        fontSize = 12.sp,
                         textAlign = TextAlign.Right,
                         modifier = Modifier
                             .alpha(0.6F)
@@ -192,6 +203,7 @@ fun LearnMore(title: String, text: String) {
             }
         }
     }
+}
 }
 @Composable
 fun Greeting(name: String) {
@@ -207,7 +219,8 @@ fun Greeting(name: String) {
 @Composable
 fun Header(navController: NavController) {
 
-    Row(modifier = Modifier.padding()
+    Row(modifier = Modifier
+        .padding()
         .padding(vertical = 10.dp)) {
 
         TextButton(onClick = {

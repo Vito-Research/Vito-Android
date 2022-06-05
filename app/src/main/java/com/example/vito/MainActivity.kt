@@ -33,7 +33,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    ContentView()
+                   ContentView()
 
 
                 }
@@ -54,6 +54,11 @@ class MainActivity : ComponentActivity() {
 
                 PrivacyView(navController)
             }
+            composable("Onboarding") {
+
+                OnboardingView(navController)
+            }
+
             /*...*/
         }
     }
