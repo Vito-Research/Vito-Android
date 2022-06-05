@@ -13,6 +13,7 @@ import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -37,7 +38,7 @@ fun PrivacyView(navController: NavController) {
         )
         Text(text = "Privacy is Vital",
             fontSize = 38.sp,
-            color = Color.Blue,
+            color = colorResource(R.color.blue),
             fontWeight = FontWeight.Bold,
             textAlign = TextAlign.Left,
             modifier = Modifier
@@ -46,17 +47,18 @@ fun PrivacyView(navController: NavController) {
         )
         Text(text = "Here's how we protect your privacy...",
             fontSize = 22.sp,
-            color = Color.Blue,
+            color = colorResource(R.color.blue),
             fontWeight = FontWeight.Bold,
             textAlign = TextAlign.Left,
             modifier = Modifier
                 .alpha(.4F)
                 .width(300.dp)
                 .padding()
+
         )
         Spacer(modifier = Modifier.height(50.dp))
         TLDRView(icon = Icons.Rounded.Lock,"Vito Processes On-Device", "Vito never exports health data off device")
-        Spacer(modifier = Modifier.height(10.dp))
+        Spacer(modifier = Modifier.height(20.dp))
         TLDRView(icon = Icons.Rounded.KeyboardArrowDown, "Fitbit API", "Used to authenticate, request, and get data from your Fitbit")
         Spacer(modifier = Modifier.height(10.dp))
         Text(text = "Vito utilizes an on-device algorithm to build community trust, resulting in increased app usage and a reduction in the spread of infection. As a result, we believe that privacy is vital.",

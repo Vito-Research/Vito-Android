@@ -24,6 +24,7 @@ import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.semantics.Role.Companion.Image
 import androidx.compose.ui.text.style.TextAlign
@@ -93,7 +94,7 @@ fun AlertCard(alertTitle: String) {
 
     )
         Card(
-            backgroundColor = Color.Red,
+            backgroundColor = colorResource(R.color.red),
             shape = RoundedCornerShape(15),
             modifier = Modifier
 
@@ -213,7 +214,7 @@ fun Header(navController: NavController) {
             navController.navigate("Data")
 
         }) {
-            Icon(Icons.Rounded.DateRange, "", tint=Color.Blue, modifier = Modifier
+            Icon(Icons.Rounded.DateRange, "", tint= colorResource(R.color.blue), modifier = Modifier
                 .alpha(0.8F))
         }
 
@@ -229,7 +230,7 @@ fun Header(navController: NavController) {
 
         }
         ) {
-            Icon(Icons.Rounded.Info, "", tint = Color.Blue,  modifier = Modifier
+            Icon(Icons.Rounded.Info, "", tint = colorResource(R.color.blue),  modifier = Modifier
                 .alpha(0.8F))
 
         }
