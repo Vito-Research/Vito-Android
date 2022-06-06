@@ -81,10 +81,10 @@ fun AlertDetails(alertTitle: String, icon: ImageVector = Icons.Rounded.Build) {
 @Composable
 fun AlertCard(alertTitle: String) {
     Text(
-        text = "Stress Event Level",
+        text = "Stress Event Level: 6/6/22",
         color = Color.Black,
         textAlign = TextAlign.Left,
-        fontSize = 25.sp,
+        fontSize = 18.sp,
         fontWeight = FontWeight.ExtraBold,
         modifier = Modifier
 
@@ -94,7 +94,7 @@ fun AlertCard(alertTitle: String) {
 
     )
         Card(
-            backgroundColor = colorResource(R.color.red),
+            backgroundColor = colorResource(R.color.green),
             shape = RoundedCornerShape(15),
             modifier = Modifier
 
