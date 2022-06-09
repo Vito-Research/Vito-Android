@@ -85,6 +85,7 @@ fun OnboardingView(navController: NavController) {
                         .alpha(.4F)
                         .width(300.dp)
                         .padding()
+                        .padding(top = 15.dp)
 
                 )
             }

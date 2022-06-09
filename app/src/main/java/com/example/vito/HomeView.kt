@@ -21,6 +21,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.graphics.vector.ImageVector
@@ -46,7 +47,7 @@ fun HomeView(navController: NavController) {
           //  .scrollable(state = scrollState, orientation = Orientation.Vertical)
     ) {
         Header(navController= navController)
-        AlertCard("ALERT")
+        AlertCard("OK")
         AlertDetails("Your heart rate while asleep is abnormally high compared to your previous data", icon= Icons.Rounded.Favorite)
         AlertDetails("This can be a sign of disease, intoxication, lack of sleep, or other factors", icon= Icons.Rounded.List)
         AlertDetails("This is not medical advice or a diagnosis, it's simply a datapoint to bring up to your doctor", icon= Icons.Rounded.Notifications)
@@ -97,12 +98,13 @@ fun AlertCard(alertTitle: String) {
             backgroundColor = colorResource(R.color.green),
             shape = RoundedCornerShape(15),
             modifier = Modifier
-
                 .padding(10.dp)
+
                 .padding(vertical = 10.dp)
                 .height(130.dp)
                 .fillMaxWidth()
                 .alpha(.8F)
+        , elevation = 7.dp
 
 
         ) {
