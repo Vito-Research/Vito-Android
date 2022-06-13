@@ -1,4 +1,4 @@
-package com.example.vito
+// package com.example.vito
 
 import androidx.compose.ui.text.font.FontWeight
 import android.os.Build
@@ -42,18 +42,12 @@ fun HomeView(navController: NavController) {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
-          //  .scrollable(state = scrollState, orientation = Orientation.Vertical)
     ) {
         Header(navController= navController)
         AlertCard("ALERT")
         AlertDetails("Your heart rate while asleep is abnormally high compared to your previous data", icon= Icons.Rounded.Favorite)
         AlertDetails("This can be a sign of disease, intoxication, lack of sleep, or other factors", icon= Icons.Rounded.List)
         AlertDetails("This is not medical advice or a diagnosis, it's simply a datapoint to bring up to your doctor", icon= Icons.Rounded.Notifications)
-//        Spacer(
-//            modifier = Modifier
-//                .height(40.dp)
-//                .fillMaxWidth()
-//        )
         LearnMore("Learn More?", "Learn more about our values and how the algorithm works")
 
 
