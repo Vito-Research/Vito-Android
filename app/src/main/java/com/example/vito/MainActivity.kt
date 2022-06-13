@@ -14,7 +14,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-//import com.example.vito.fitbitauth.src.main.java.com.fitbit.authentication.*
 import com.example.vito.ui.theme.VitoTheme
 import io.github.boguszpawlowski.composecalendar.SelectableCalendar
 import java.io.File
@@ -54,37 +53,11 @@ class MainActivity : ComponentActivity() {
 
                 PrivacyView(navController)
             }
-            /*...*/
         }
     }
 
-//    @Override
-//    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-//        super.onActivityResult(requestCode, resultCode, data);
-//        AuthenticationManager.onActivityResult(requestCode, resultCode, data, (AuthenticationHandler) this)
-//    }
-//
-//
-//    public void onAuthFinished(AuthenticationResult authenticationResult) {
-//        if (authenticationResult.isSuccessful()) {
-//            //WOOT WOOT!! It worked!
-//        } else {
-//            //Uh oh... errors...
-//        }
-//    }
-//private fun login() {
-//    AuthenticationManager.login(this);
-//    ClientCredentials clientCredentials = new ClientCredentials(<CLIENT_ID>, <CLIENT_SECRET>, <REDIRECT_URL>);
-//    String secureKey = "ba";
-//
-//    AuthenticationConfiguration config = new AuthenticationConfigurationBuilder()
-//        .setClientCredentials(clientCredentials)
-//        .setEncryptionKey(secureKey)
-//        .addRequiredScopes(Scope.profile, Scope.settings)
-//        .build();
-//
-//    AuthenticationManager.configure(this, config)
-//}
+
+
     private fun listAssetFiles(path: String): Boolean {
         val list: Array<String>?
 
